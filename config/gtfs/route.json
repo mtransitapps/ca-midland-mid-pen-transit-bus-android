@@ -1,9 +1,16 @@
 {
     "default_route_id_enabled": true,
-    "use_route_short_name_for_route_id": true,
+    "use_route_short_name_for_route_id": false,
     "default_route_long_name_enabled": true,
     "direction_finder_enabled": true,
     "trip_headsign_remove_via": true,
-    "trip_headsign_cleaners": [],
+    "trip_headsign_cleaners": [
+        {
+            "regex": "^((\\w+)( route)? - (Saturday|Weekday)(s)?(,)? (Regular Trip)?)",
+            "wip": "^((\\w+)( route)? - (Saturdays|Weekday(s)?)(,)? (Regular Trip)?)",
+            "ignore_case": true,
+            "comment": "remove 'route - service, kind of trip'"
+        }
+    ],
     "stop_name_cleaners": []
 }
